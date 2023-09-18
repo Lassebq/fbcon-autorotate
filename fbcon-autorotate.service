@@ -1,0 +1,12 @@
+[Unit]
+Description=Framebuffer console autorotation
+Requires=systemd-udevd.service
+After=systemd-udevd.service
+
+[Service]
+Type=forking
+ExecStart=/usr/lib/systemd/scripts/fbcon-autorotate
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+monitor-sensor --accel | while read -r s; do (
+        s="$(echo "$s" | sed "s/[A-Za-z ]*: //g")"
+        case "$s" in
+            normal)
+                echo 0;;
+            right-up)
+                echo 1;;
+            bottom-up)
+                echo 2;;
+            left-up)
+                echo 3;;
+        esac
+    ) > /sys/class/graphics/fbcon/rotate
+done
+
