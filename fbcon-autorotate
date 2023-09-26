@@ -12,6 +12,6 @@ monitor-sensor --accel | while read -r s; do (
             left-up)
                 echo 3;;
         esac
-    ) > /sys/class/graphics/fbcon/rotate
+    ) > /sys/class/graphics/fbcon/rotate_all
 done
 
